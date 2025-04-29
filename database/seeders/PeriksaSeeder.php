@@ -1,7 +1,5 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\DetailPeriksa;
 use App\Models\Periksa;
 use Carbon\Carbon;
@@ -17,65 +15,73 @@ class PeriksaSeeder extends Seeder
     {
         // Pemeriksaan yang sudah selesai
         $periksa1 = Periksa::create([
-            'id_pasien' => 3, // Citra Dewi
-            'id_dokter' => 1, // Dr. Andi Pratama
+            'id_pasien' => 3, // Bagas Pratama
+            'id_dokter' => 1, // Dr. Farhan Wijaya
             'tgl_periksa' => Carbon::now()->subDays(5),
-            'catatan' => 'Pasien mengeluh demam dan sakit kepala. Diagnosis: Demam virus.',
-            'biaya_periksa' => 185000, // 150000 + 35000 (obat)
+            'keluhan' => 'Sakit tenggorokan dan demam ringan',
+            'catatan_dokter' => 'Pasien mengeluh sakit tenggorokan dan demam ringan. Diagnosis: Faringitis.',
+            'biaya_periksa' => 200000, // 150000 + 50000 (obat)
+            'status' => 'done'
         ]);
 
         // Tambahkan obat untuk periksa1
         DetailPeriksa::create([
             'id_periksa' => $periksa1->id,
-            'id_obat' => 1, // Paracetamol
+            'id_obat' => 1, // Aspirin
         ]);
         
         DetailPeriksa::create([
             'id_periksa' => $periksa1->id,
-            'id_obat' => 7, // Vitamin C
+            'id_obat' => 7, // Zinc
         ]);
 
         // Pemeriksaan yang sudah selesai 2
         $periksa2 = Periksa::create([
-            'id_pasien' => 4, // Deni Kurniawan
-            'id_dokter' => 2, // Dr. Budi Santoso
+            'id_pasien' => 4, // Indah Lestari
+            'id_dokter' => 2, // Dr. Siti Aisyah
             'tgl_periksa' => Carbon::now()->subDays(3),
-            'catatan' => 'Pasien mengeluh batuk pilek dan demam ringan. Diagnosis: Infeksi saluran pernapasan atas.',
-            'biaya_periksa' => 198000, // 150000 + 48000 (obat)
+            'keluhan' => 'Batuk kronis dan sesak napas',
+            'catatan_dokter' => 'Pasien mengalami batuk kronis dan sesak napas. Diagnosis: Asma ringan.',
+            'biaya_periksa' => 215000, // 150000 + 65000 (obat)
+            'status' => 'done'
         ]);
 
         // Tambahkan obat untuk periksa2
         DetailPeriksa::create([
             'id_periksa' => $periksa2->id,
-            'id_obat' => 1, // Paracetamol
+            'id_obat' => 3, // Salbutamol
         ]);
         
         DetailPeriksa::create([
             'id_periksa' => $periksa2->id,
-            'id_obat' => 2, // Amoxicillin
+            'id_obat' => 2, // Loratadine
         ]);
         
         DetailPeriksa::create([
             'id_periksa' => $periksa2->id,
-            'id_obat' => 6, // Cetirizine
+            'id_obat' => 6, // Prednisone
         ]);
 
         // Pemeriksaan yang belum selesai (menunggu dokter)
         Periksa::create([
-            'id_pasien' => 5, // Eka Putri
-            'id_dokter' => 1, // Dr. Andi Pratama
+            'id_pasien' => 5, // Rizky Ananda
+            'id_dokter' => 1, // Dr. Farhan Wijaya
             'tgl_periksa' => Carbon::now()->addHours(2),
-            'catatan' => 'Keluhan: Sakit perut bagian bawah dan mual sejak 2 hari yang lalu.',
+            'keluhan' => 'Nyeri perut kanan bawah dan mual',
+            'catatan_dokter' => null,
             'biaya_periksa' => 0, // Belum diperiksa
+            'status' => 'pending'
         ]);
 
         // Pemeriksaan yang belum selesai (menunggu dokter)
         Periksa::create([
-            'id_pasien' => 3, // Citra Dewi
-            'id_dokter' => 2, // Dr. Budi Santoso
+            'id_pasien' => 3, // Bagas Pratama
+            'id_dokter' => 2, // Dr. Siti Aisyah
             'tgl_periksa' => Carbon::now()->addDays(1),
-            'catatan' => 'Keluhan: Nyeri sendi dan otot, terutama di pagi hari.',
+            'keluhan' => 'Nyeri dada ringan saat beraktivitas berat',
+            'catatan_dokter' => null,
             'biaya_periksa' => 0, // Belum diperiksa
+            'status' => 'pending'
         ]);
     }
 }

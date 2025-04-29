@@ -15,54 +15,54 @@ class ObatSeeder extends Seeder
     {
         $obats = [
             [
-                'nama_obat' => 'Paracetamol',
-                'kemasan' => 'Tablet 500mg',
-                'harga' => 10000,
-            ],
-            [
-                'nama_obat' => 'Amoxicillin',
-                'kemasan' => 'Kapsul 500mg',
-                'harga' => 25000,
-            ],
-            [
-                'nama_obat' => 'Ibuprofen',
-                'kemasan' => 'Tablet 400mg',
-                'harga' => 15000,
-            ],
-            [
-                'nama_obat' => 'Omeprazole',
-                'kemasan' => 'Kapsul 20mg',
-                'harga' => 20000,
-            ],
-            [
-                'nama_obat' => 'Levofloxacin',
-                'kemasan' => 'Tablet 500mg',
-                'harga' => 35000,
-            ],
-            [
-                'nama_obat' => 'Cetirizine',
-                'kemasan' => 'Tablet 10mg',
-                'harga' => 8000,
-            ],
-            [
-                'nama_obat' => 'Vitamin C',
-                'kemasan' => 'Tablet 500mg',
-                'harga' => 5000,
-            ],
-            [
-                'nama_obat' => 'Antasida',
-                'kemasan' => 'Suspensi 60ml',
-                'harga' => 18000,
-            ],
-            [
-                'nama_obat' => 'Diazepam',
-                'kemasan' => 'Tablet 5mg',
+                'nama_obat' => 'Aspirin',
+                'kemasan' => 'Tablet 100mg',
                 'harga' => 12000,
             ],
             [
-                'nama_obat' => 'Metformin',
-                'kemasan' => 'Tablet 500mg',
-                'harga' => 15000,
+                'nama_obat' => 'Loratadine',
+                'kemasan' => 'Tablet 10mg',
+                'harga' => 17000,
+            ],
+            [
+                'nama_obat' => 'Salbutamol',
+                'kemasan' => 'Tablet 2mg',
+                'harga' => 14000,
+            ],
+            [
+                'nama_obat' => 'Ranitidine',
+                'kemasan' => 'Tablet 150mg',
+                'harga' => 22000,
+            ],
+            [
+                'nama_obat' => 'Clindamycin',
+                'kemasan' => 'Kapsul 300mg',
+                'harga' => 33000,
+            ],
+            [
+                'nama_obat' => 'Prednisone',
+                'kemasan' => 'Tablet 5mg',
+                'harga' => 9000,
+            ],
+            [
+                'nama_obat' => 'Zinc',
+                'kemasan' => 'Tablet 20mg',
+                'harga' => 6000,
+            ],
+            [
+                'nama_obat' => 'Mylanta',
+                'kemasan' => 'Suspensi 150ml',
+                'harga' => 25000,
+            ],
+            [
+                'nama_obat' => 'Fluoxetine',
+                'kemasan' => 'Kapsul 20mg',
+                'harga' => 28000,
+            ],
+            [
+                'nama_obat' => 'Glibenclamide',
+                'kemasan' => 'Tablet 5mg',
+                'harga' => 16000,
             ],
         ];
 
