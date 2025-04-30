@@ -330,5 +330,31 @@
       buttons: ['copy','csv','excel','pdf','print','colvis']
     }).buttons().container().appendTo('#obatTable_wrapper .col-md-6:eq(0)');
   });
+
+  $('.edit-obat').on('click', function () {
+    const id = $(this).data('id');
+    const nama = $(this).data('nama');
+    const kemasan = $(this).data('kemasan');
+    const harga = $(this).data('harga');
+
+    $('#form-title').text('Edit Obat');
+    $('#obat_id').val(id);
+    $('#nama_obat').val(nama);
+    $('#kemasan').val(kemasan);
+    $('#harga').val(harga);
+    $('#method').val('PUT');
+    $('#obatForm').attr('action', '/dokter/obat/' + id);
+    $('#btnCancel').show();
+});
+
+$('.btn-delete').on('click', function () {
+    const id = $(this).data('id');
+    const nama = $(this).data('nama');
+
+    $('#delete-obat-nama').text(nama);
+    $('#deleteForm').attr('action', '/dokter/obat/' + id);
+    $('#deleteModal').modal('show');
+});
+
 </script>
 @endsection

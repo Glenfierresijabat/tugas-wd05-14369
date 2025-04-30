@@ -1,577 +1,470 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poliklinik Sehat - Pelayanan Kesehatan Terpercaya</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2d8cf0;
-      --secondary-color: #5ebd3e;
-      --dark-color: #333;
-      --light-color: #f9f9f9;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-color);
-    }
-    
-    .navbar {
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 15px 0;
-      background-color: white;
-    }
-    
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 24px;
-      color: var(--primary-color);
-    }
-    
-    .navbar-brand span {
-      color: var(--secondary-color);
-    }
-    
-    .nav-link {
-      font-weight: 500;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-primary-custom {
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 50px;
-      padding: 8px 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border: none;
-    }
-    
-    .btn-primary-custom:hover {
-      background-color: #2579d8;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      color: white;
-    }
-    
-    .btn-outline-custom {
-      background-color: transparent;
-      color: var(--primary-color);
-      border: 2px solid var(--primary-color);
-      border-radius: 50px;
-      padding: 8px 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-outline-custom:hover {
-      background-color: var(--primary-color);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .hero {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero-title {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--primary-color);
-    }
-    
-    .hero-subtitle {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 30px;
-      color: #666;
-    }
-    
-    .hero-image {
-      max-width: 100%;
-      animation: float 4s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-    
-    .feature-box {
-      background-color: white;
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      height: 100%;
-    }
-    
-    .feature-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-    
-    .feature-icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-      color: var(--primary-color);
-    }
-    
-    .section-title {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 50px;
-      text-align: center;
-      color: var(--primary-color);
-    }
-    
-    .doctor-card {
-      background-color: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      height: 100%;
-    }
-    
-    .doctor-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-    
-    .doctor-image {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    
-    .doctor-info {
-      padding: 20px;
-    }
-    
-    .doctor-name {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    
-    .doctor-specialty {
-      font-size: 16px;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-    
-    .testimonial-card {
-      background-color: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      height: 100%;
-      position: relative;
-    }
-    
-    .testimonial-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-    
-    .testimonial-card::before {
-      content: '\201C';
-      font-size: 80px;
-      position: absolute;
-      top: -10px;
-      left: 20px;
-      color: var(--primary-color);
-      opacity: 0.1;
-    }
-    
-    .footer {
-      background-color: #333;
-      color: white;
-      padding: 50px 0 20px;
-    }
-    
-    .footer-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: white;
-    }
-    
-    .footer-links {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-    
-    .footer-links a {
-      color: #ccc;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .footer-links a:hover {
-      color: var(--primary-color);
-      padding-left: 5px;
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        padding: 80px 0;
-        text-align: center;
-      }
-      
-      .hero-title {
-        font-size: 36px;
-      }
-      
-      .hero-subtitle {
-        font-size: 16px;
-      }
-      
-      .hero-image {
-        margin-top: 50px;
-      }
-      
-      .section-title {
-        font-size: 30px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poliklinik Sehat Sentosa</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-pattern {
+            background-color: #f0f9ff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544v2.83L25.456 30l-1.414 1.414-28-28L0 0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2v2.83l21.627 21.628-1.414 1.414L0 13.657v2.828l17.8 17.8-1.414 1.414L0 19.1v2.83l14.142 14.14-1.414 1.415L0 24.544V30h5.457L30 5.456 28.586 4.04 0 32.626v-2.83L26.544 2.543 25.13 1.13 0 26.272v-2.83L22.717 0H0v5.373z' fill='%239fb4cc' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .form-container {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
 </head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Poli<span>klinik</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#features">Layanan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#doctors">Dokter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testimonials">Testimoni</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Kontak</a>
-          </li>
-        </ul>
-        <div class="ms-auto">
-          @if (Route::has('login'))
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-blue-600 text-2xl font-bold flex items-center">
+                        <i class="fas fa-hospital-user mr-2"></i>
+                        <span>PoliSehat</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#beranda" class="px-3 py-2 text-blue-600 font-medium hover:text-blue-800">Beranda</a>
+                    <a href="#layanan" class="px-3 py-2 text-gray-600 font-medium hover:text-blue-600">Layanan</a>
+                    <a href="#dokter" class="px-3 py-2 text-gray-600 font-medium hover:text-blue-600">Dokter</a>
+                    <a href="#testimoni" class="px-3 py-2 text-gray-600 font-medium hover:text-blue-600">Testimoni</a>
+                    <a href="#kontak" class="px-3 py-2 text-gray-600 font-medium hover:text-blue-600">Kontak</a>
+                    <a href="/login" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Masuk</a>
+                    <a href="/register" class="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300">Daftar</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2">
+                <a href="#beranda" class="block py-2 text-gray-600 hover:text-blue-600">Beranda</a>
+                <a href="#layanan" class="block py-2 text-gray-600 hover:text-blue-600">Layanan</a>
+                <a href="#dokter" class="block py-2 text-gray-600 hover:text-blue-600">Dokter</a>
+                <a href="#testimoni" class="block py-2 text-gray-600 hover:text-blue-600">Testimoni</a>
+                <a href="#kontak" class="block py-2 text-gray-600 hover:text-blue-600">Kontak</a>
+                <div class="flex space-x-2 mt-3 mb-2">
+                    @if (Route::has('login'))
             @auth
               <a href="{{ url('/home') }}" class="btn btn-primary-custom">Dashboard</a>
             @else
-              <a href="{{ route('login') }}" class="btn btn-primary-custom me-2">Masuk</a>
+              <a href="{{ route('login') }}" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-center">Masuk</a>
               @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="btn btn-outline-custom">Daftar</a>
+                <a href="{{ route('register') }}" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-center">Daftar</a>
               @endif
             @endauth
           @endif
+                  </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="hero-title">Pelayanan Kesehatan Terpercaya</h1>
-          <p class="hero-subtitle">Poliklinik Sehat hadir untuk memberikan pelayanan kesehatan terbaik dengan dokter-dokter berpengalaman dan fasilitas modern.</p>
-          <div class="d-flex gap-3">
-            @if (Route::has('login'))
-              @auth
-                <a href="{{ url('/home') }}" class="btn btn-primary-custom btn-lg">Dashboard</a>
-              @else
-                <a href="{{ route('login') }}" class="btn btn-primary-custom btn-lg">Masuk</a>
-                @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="btn btn-outline-custom btn-lg">Daftar Sekarang</a>
-                @endif
-              @endauth
-            @endif
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <img src="https://img.freepik.com/free-vector/medical-healthcare-services-concept_1200-155.jpg" alt="Healthcare Illustration" class="hero-image">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="py-5 my-5" id="features">
-    <div class="container">
-      <h2 class="section-title">Layanan Kami</h2>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <i class="fas fa-stethoscope feature-icon"></i>
-            <h3>Pemeriksaan Umum</h3>
-            <p>Layanan pemeriksaan kesehatan umum oleh dokter-dokter berpengalaman untuk menangani berbagai keluhan kesehatan.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <i class="fas fa-heartbeat feature-icon"></i>
-            <h3>Pemeriksaan Khusus</h3>
-            <p>Layanan pemeriksaan spesialis untuk kondisi kesehatan tertentu dengan peralatan modern dan terkini.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <i class="fas fa-pills feature-icon"></i>
-            <h3>Farmasi</h3>
-            <p>Layanan apotek yang menyediakan obat-obatan berkualitas dengan harga terjangkau dan konsultasi penggunaan obat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Doctors Section -->
-  <section class="py-5 my-5 bg-light" id="doctors">
-    <div class="container">
-      <h2 class="section-title">Dokter Kami</h2>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="doctor-card">
-            <img src="https://img.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg" alt="Dr. Andi Pratama" class="doctor-image">
-            <div class="doctor-info">
-              <h3 class="doctor-name">Dr. Andi Pratama</h3>
-              <p class="doctor-specialty">Dokter Umum</p>
-              <p>Dokter umum berpengalaman dengan lebih dari 10 tahun praktik dalam menangani berbagai kondisi kesehatan.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="doctor-card">
-            <img src="https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg" alt="Dr. Budi Santoso" class="doctor-image">
-            <div class="doctor-info">
-              <h3 class="doctor-name">Dr. Budi Santoso</h3>
-              <p class="doctor-specialty">Dokter Umum</p>
-              <p>Dokter umum dengan pendekatan yang teliti dan santai, membuat pasien merasa nyaman saat konsultasi.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="doctor-card">
-            <img src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg" alt="Dr. Dewi Sartika" class="doctor-image">
-            <div class="doctor-info">
-              <h3 class="doctor-name">Dr. Dewi Sartika</h3>
-              <p class="doctor-specialty">Dokter Umum</p>
-              <p>Dokter dengan pendekatan yang ramah dan teliti dalam menangani pasien dari berbagai kalangan usia.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-5 my-5" id="testimonials">
-    <div class="container">
-      <h2 class="section-title">Testimoni Pasien</h2>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testimonial-card">
-            <p>"Pelayanan di Poliklinik Sehat sangat baik dan profesional. Dokternya ramah dan menjelaskan kondisi saya dengan detail. Saya merasa lebih tenang setelah berobat di sini."</p>
-            <div class="d-flex align-items-center mt-3">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmad Fadli" class="rounded-circle me-3" width="50">
-              <div>
-                <h5 class="mb-0">Ahmad Fadli</h5>
-                <small class="text-muted">Pasien</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testimonial-card">
-            <p>"Fasilitas di Poliklinik Sehat sangat lengkap dan modern. Prosedur pendaftaran juga mudah dan tidak membutuhkan waktu lama. Dokternya sangat kompeten."</p>
-            <div class="d-flex align-items-center mt-3">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Siti Aminah" class="rounded-circle me-3" width="50">
-              <div>
-                <h5 class="mb-0">Siti Aminah</h5>
-                <small class="text-muted">Pasien</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="testimonial-card">
-            <p>"Anak saya selalu merasa nyaman setiap kali berobat di Poliklinik Sehat. Dokter anaknya sangat sabar dan pintar membuat anak-anak tidak takut untuk diperiksa."</p>
-            <div class="d-flex align-items-center mt-3">
-              <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Budi Rahardjo" class="rounded-circle me-3" width="50">
-              <div>
-                <h5 class="mb-0">Budi Rahardjo</h5>
-                <small class="text-muted">Orang Tua Pasien</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-5 my-5 bg-light" id="contact">
-    <div class="container">
-      <h2 class="section-title">Hubungi Kami</h2>
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div class="bg-white p-4 rounded shadow-sm">
-            <h4 class="mb-4">Informasi Kontak</h4>
-            <div class="d-flex mb-3">
-              <div class="me-3">
-                <i class="fas fa-map-marker-alt text-primary fa-2x"></i>
-              </div>
-              <div>
-                <h5>Alamat</h5>
-                <p>Jl. Kesehatan No. 123, Jakarta Selatan</p>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="me-3">
-                <i class="fas fa-phone-alt text-primary fa-2x"></i>
-              </div>
-              <div>
-                <h5>Telepon</h5>
-                <p>(021) 1234-5678</p>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="me-3">
-                <i class="fas fa-envelope text-primary fa-2x"></i>
-              </div>
-              <div>
-                <h5>Email</h5>
-                <p>info@polikliniksehat.com</p>
-              </div>
-            </div>
-            <div class="d-flex">
-              <div class="me-3">
-                <i class="fas fa-clock text-primary fa-2x"></i>
-              </div>
-              <div>
-                <h5>Jam Operasional</h5>
-                <p>Senin - Sabtu: 08.00 - 20.00<br>Minggu: 09.00 - 14.00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-white p-4 rounded shadow-sm">
-            <h4 class="mb-4">Kirim Pesan</h4>
-            <form>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="name" class="form-label">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="name" required>
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-pattern pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Kesehatan Anda <br>Prioritas Kami</h1>
+                    <p class="text-lg text-gray-600 mb-8">Poliklinik dengan layanan terbaik dan dokter berkualitas untuk menjaga kesehatan Anda dan keluarga.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/register" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-lg font-medium inline-block">Daftar Sekarang</a>
+                        <button class="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition duration-300 text-lg font-medium">Jadwalkan Konsultasi</button>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" required>
+                <div class="w-full lg:w-1/2">
+                    <img src="/api/placeholder/600/400" alt="Pelayanan kesehatan terbaik" class="rounded-lg shadow-xl mx-auto">
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="subject" class="form-label">Subjek</label>
-                <input type="text" class="form-control" id="subject" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Pesan</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary-custom">Kirim Pesan</button>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h3 class="mb-3">Poli<span class="text-primary">klinik</span></h3>
-          <p>Poliklinik Sehat adalah pusat layanan kesehatan terpercaya yang menyediakan pelayanan medis berkualitas dengan dokter-dokter berpengalaman dan fasilitas modern.</p>
-          <div class="d-flex gap-3 mt-3">
-            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+    <!-- Keunggulan Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Mengapa Memilih Kami?</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Poliklinik kami memberikan pelayanan kesehatan terbaik dengan fasilitas modern dan dokter berpengalaman.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Dokter Ahli</h3>
+                    <p class="text-gray-600 text-center">Tim dokter kami terdiri dari spesialis berpengalaman di berbagai bidang kesehatan.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-microscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Peralatan Modern</h3>
+                    <p class="text-gray-600 text-center">Kami menggunakan peralatan medis terkini untuk diagnosa dan perawatan yang akurat.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Pelayanan 24 Jam</h3>
+                    <p class="text-gray-600 text-center">Poliklinik kami siap melayani kebutuhan medis Anda selama 24 jam setiap hari.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-2 col-md-4 mb-4">
-          <h5 class="footer-title">Layanan</h5>
-          <ul class="footer-links">
-            <li><a href="#">Pemeriksaan Umum</a></li>
-            <li><a href="#">Pemeriksaan Khusus</a></li>
-            <li><a href="#">Farmasi</a></li>
-            <li><a href="#">Unit Gawat Darurat</a></li>
-            <li><a href="#">Laboratorium</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-4 mb-4">
-          <h5 class="footer-title">Link Cepat</h5>
-          <ul class="footer-links">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#features">Layanan</a></li>
-            <li><a href="#doctors">Dokter</a></li>
-            <li><a href="#testimonials">Testimoni</a></li>
-            <li><a href="#contact">Kontak</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-4 mb-4">
-          <h5 class="footer-title">Jam Praktik</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">Senin - Jumat: 08.00 - 20.00</li>
-            <li class="mb-2">Sabtu: 08.00 - 17.00</li>
-            <li>Minggu: 09.00 - 14.00</li>
-          </ul>
-          <div class="mt-4">
-            <h5 class="footer-title">Nomor Darurat</h5>
-            <h4 class="text-white">(021) 1234-5678</h4>
-          </div>
-        </div>
-      </div>
-      <div class="text-center pt-4 mt-4 border-top border-secondary">
-        <p>&copy; {{ date('Y') }} Poliklinik Sehat. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Layanan Kami</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan kesehatan untuk kebutuhan Anda dan keluarga</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Poli Umum</h3>
+                    <p class="text-gray-600 mb-4">Pemeriksaan kesehatan umum dan konsultasi untuk berbagai keluhan.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Poli Gigi</h3>
+                    <p class="text-gray-600 mb-4">Perawatan gigi dan mulut oleh dokter gigi profesional.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Poli Anak</h3>
+                    <p class="text-gray-600 mb-4">Perawatan kesehatan untuk bayi dan anak oleh dokter spesialis anak.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Laboratorium</h3>
+                    <p class="text-gray-600 mb-4">Layanan tes laboratorium lengkap dengan hasil yang cepat dan akurat.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokter Section -->
+    <section id="dokter" class="py-12 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Dokter Kami</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tim dokter berpengalaman dan profesional siap memberikan pelayanan terbaik</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="/api/placeholder/400/300" alt="Dr. Andi Setiawan" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Dr. Andi Setiawan</h3>
+                        <p class="text-blue-600 mb-3">Dokter Umum</p>
+                        <p class="text-gray-600 mb-4">Spesialis dalam penanganan penyakit umum dengan pengalaman lebih dari 10 tahun.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="/api/placeholder/400/300" alt="Dr. Siti Rahayu" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Dr. Siti Rahayu</h3>
+                        <p class="text-blue-600 mb-3">Dokter Gigi</p>
+                        <p class="text-gray-600 mb-4">Spesialis perawatan gigi dan mulut dengan keahlian dalam perawatan estetika gigi.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="/api/placeholder/400/300" alt="Dr. Budi Santoso" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Dr. Budi Santoso</h3>
+                        <p class="text-blue-600 mb-3">Dokter Anak</p>
+                        <p class="text-gray-600 mb-4">Spesialis anak dengan pendekatan ramah anak dan pengalaman lebih dari 15 tahun.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Apa Kata Pasien Kami</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pengalaman pasien yang telah mendapatkan perawatan di poliklinik kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Pelayanan yang sangat baik dan dokter yang sangat profesional. Saya merasa nyaman dan tenang saat berobat di sini."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-800 font-bold">RD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Rudi Darmawan</h4>
+                            <p class="text-gray-500 text-sm">Pasien Poli Umum</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Anak saya sangat senang setiap kali berkunjung ke poli anak. Dokter ramah dan fasilitas bermain untuk anak membuat anak tidak takut."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-800 font-bold">LS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Lina Suryani</h4>
+                            <p class="text-gray-500 text-sm">Pasien Poli Anak</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Perawatan gigi saya berjalan lancar dan tidak terasa sakit. Dokter gigi sangat teliti dan hasilnya memuaskan. Terima kasih!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-800 font-bold">HW</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Hendra Wijaya</h4>
+                            <p class="text-gray-500 text-sm">Pasien Poli Gigi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-12 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Hubungi Kami</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Untuk informasi lebih lanjut atau membuat janji, silakan hubungi kami</p>
+            </div>
+            
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                    <div class="bg-blue-50 p-6 rounded-lg h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Alamat</h4>
+                                <p class="text-gray-600">Jl. Kesehatan No. 123, Kota Jakarta, 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Telepon</h4>
+                                <p class="text-gray-600">+62 21 1234 5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600">info@polisehat.co.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Jam Operasional</h4>
+                                <p class="text-gray-600">Senin - Sabtu: 08.00 - 20.00</p>
+                                <p class="text-gray-600">Minggu: 08.00 - 14.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6">Kirim Pesan</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Nama</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subjek</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                    <div class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-hospital-user mr-2"></i>
+                        <span>PoliSehat</span>
+                    </div>
+                    <p class="mb-6">Poliklinik terpercaya dengan fasilitas modern dan dokter ahli untuk kesehatan Anda dan keluarga.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                    <h3 class="text-xl font-semibold mb-6">Tautan Cepat</h3>
+                    <ul>
+                        <li class="mb-3"><a href="#beranda" class="hover:text-blue-300 transition duration-300">Beranda</a></li>
+                        <li class="mb-3"><a href="#layanan" class="hover:text-blue-300 transition duration-300">Layanan</a></li>
+                        <li class="mb-3"><a href="#dokter" class="hover:text-blue-300 transition duration-300">Dokter</a></li>
+                        <li class="mb-3"><a href="#testimoni" class="hover:text-blue-300 transition duration-300">Testimoni</a></li>
+                        <li><a href="#kontak" class="hover:text-blue-300 transition duration-300">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                    <h3 class="text-xl font-semibold mb-6">Layanan</h3>
+                    <ul>
+                        <li class="mb-3"><a href="#" class="hover:text-blue-300 transition duration-300">Poli Umum</a></li>
+                        <li class="mb-3"><a href="#" class="hover:text-blue-300 transition duration-300">Poli Gigi</a></li>
+                        <li class="mb-3"><a href="#" class="hover:text-blue-300 transition duration-300">Poli Anak</a></li>
+                        <li class="mb-3"><a href="#" class="hover:text-blue-300 transition duration-300">Laboratorium</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition duration-300">Apotek</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+                    <h3 class="text-xl font-semibold mb-6">Jam Operasional</h3>
+                    <ul>
+                        <li class="mb-3 flex justify-between"><span>Senin - Jumat:</span> <span>08.00 - 20.00</span></li>
+                        <li class="mb-3 flex justify-between"><span>Sabtu:</span> <span>08.00 - 18.00</span></li>
+                        <li class="mb-3 flex justify-between"><span>Minggu:</span> <span>08.00 - 14.00</span></li>
+                        <li class="mt-6 font-semibold">Layanan Darurat: 24 Jam</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 PoliSehat. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
