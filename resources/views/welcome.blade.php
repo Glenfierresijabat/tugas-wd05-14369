@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poliklinikku</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,138 +14,80 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       min-height: 100vh;
-      width: 100%;
-      overflow-x: hidden;
-      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       color: #1f2937;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     body.dark {
-      background: linear-gradient(to right, #111827, #1f2937);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
     }
 
     .container {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
+      text-align: center;
+      background: white;
+      padding: 3rem;
+      border-radius: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
     }
 
-    .content {
-      text-align: center;
+    body.dark .container {
+      background: #1f2937;
     }
 
     .title {
-      font-size: 4rem;
-      font-weight: bold;
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 2rem;
-      letter-spacing: -0.05em;
+      animation: fadeScale 1s ease forwards;
     }
 
-    @media (min-width: 768px) {
-      .title {
-        font-size: 6rem;
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
       }
-    }
 
-    .title span.word {
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
-
-    .letter {
-      display: inline-block;
-      background: linear-gradient(to right, #0f172a, rgba(107, 114, 128, 0.8));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      transform: translateY(100px);
-      opacity: 0;
-    }
-
-    body.dark .letter {
-      background: linear-gradient(to right, white, rgba(255, 255, 255, 0.8));
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .button-container {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .button {
-      background-color: #3b82f6;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
       border: none;
-      border-radius: 0.75rem;
+      border-radius: 2rem;
       padding: 0.75rem 2rem;
       font-size: 1.125rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
     .button:hover {
-      background-color: #2563eb;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     }
 
     body.dark .button {
-      background-color: #2563eb;
-    }
-
-    body.dark .button:hover {
-      background-color: #1d4ed8;
-    }
-
-    .arrow {
-      font-size: 1.25rem;
-      transition: transform 0.3s ease;
-    }
-
-    .button:hover .arrow {
-      transform: translateX(5px);
-    }
-
-    .background {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .svg-container {
-      width: 100%;
-      height: 100%;
-      color: rgba(0, 0, 0, 0.05);
-    }
-
-    body.dark .svg-container {
-      color: rgba(255, 255, 255, 0.05);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes letterAnimation {
-      0% {
-        transform: translateY(100px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
     }
 
     .loading-overlay {
@@ -152,7 +96,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -161,25 +105,27 @@
     }
 
     body.dark .loading-overlay {
-      background: linear-gradient(to right, #111827, #1f2937);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     }
 
     .loading-spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 50px;
+      height: 50px;
+      border: 6px solid rgba(0, 0, 0, 0.1);
       border-radius: 50%;
-      border-top-color: #0f172a;
+      border-top-color: #4f46e5;
       animation: spin 1s linear infinite;
     }
 
     body.dark .loading-spinner {
-      border: 4px solid rgba(255, 255, 255, 0.1);
+      border: 6px solid rgba(255, 255, 255, 0.1);
       border-top-color: white;
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hidden {
@@ -188,79 +134,21 @@
     }
   </style>
 </head>
+
 <body>
   <div class="loading-overlay" id="loading-overlay">
     <div class="loading-spinner"></div>
   </div>
 
   <div class="container">
-    <div class="background" id="background1"></div>
-    <div class="background" id="background2"></div>
-
-    <div class="content">
-      <h1 class="title" id="title">Poliklinikku</h1>
-
-      <div class="button-container">
-        <button class="button" id="masuk-btn">
-          <span>Masuk</span>
-          <span class="arrow">→</span>
-        </button>
-        <button class="button" id="daftar-btn">
-          <span>Daftar</span>
-          <span class="arrow">→</span>
-        </button>
-      </div>
+    <h1 class="title">Poliklinikku</h1>
+    <div class="button-container">
+      <button class="button" id="masuk-btn">Masuk</button>
+      <button class="button" id="daftar-btn">Daftar</button>
     </div>
   </div>
 
   <script>
-    function createStaticPaths(containerId, position) {
-      const container = document.getElementById(containerId);
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('class', 'svg-container');
-      svg.setAttribute('viewBox', '0 0 696 316');
-      svg.setAttribute('fill', 'none');
-
-      for (let i = 0; i < 36; i++) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        const d = `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position} -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position} ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position} ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`;
-        path.setAttribute('d', d);
-        path.setAttribute('stroke', 'currentColor');
-        path.setAttribute('stroke-width', (0.5 + i * 0.03).toString());
-        path.setAttribute('stroke-opacity', (0.05 + i * 0.02).toString());
-        svg.appendChild(path);
-      }
-
-      container.appendChild(svg);
-    }
-
-    function animateTitle() {
-      const titleElement = document.getElementById('title');
-      const text = titleElement.textContent;
-      titleElement.textContent = '';
-
-      const words = text.split(' ');
-
-      words.forEach((word, wordIndex) => {
-        const wordSpan = document.createElement('span');
-        wordSpan.classList.add('word');
-
-        Array.from(word).forEach((letter, letterIndex) => {
-          const letterSpan = document.createElement('span');
-          letterSpan.classList.add('letter');
-          letterSpan.textContent = letter;
-
-          const delay = wordIndex * 0.1 + letterIndex * 0.03;
-          letterSpan.style.animation = `letterAnimation 0.5s forwards ease-out`;
-          letterSpan.style.animationDelay = `${delay + 0.5}s`;
-
-          wordSpan.appendChild(letterSpan);
-        });
-
-        titleElement.appendChild(wordSpan);
-      });
-    }
-
     function setupDarkMode() {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
@@ -300,12 +188,10 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       setupDarkMode();
-      createStaticPaths('background1', 1);
-      createStaticPaths('background2', -1);
-      animateTitle();
       setupButtons();
       handleLoading();
     });
   </script>
 </body>
+
 </html>
