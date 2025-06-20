@@ -79,7 +79,7 @@
           <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="Admin Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin-A11.2022.14369</a>
+          <a href="#" class="d-block">A11.2022.14369</a>
         </div>
       </div>
 
