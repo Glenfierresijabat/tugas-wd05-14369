@@ -1,11 +1,16 @@
-# Sistem Informasi Rumah Sakit
+# <img src="https://cdn-icons-png.flaticon.com/512/1586/1586551.png" width="32"> Sistem Informasi Rumah Sakit
 
-## Deskripsi Proyek
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/1586/1586551.png" width="100">
+  <h3 align="center">Laravel 12 - Sistem Informasi Rumah Sakit</h3>
+</p>
+
+## 📋 Deskripsi Proyek
 Sistem Informasi Rumah Sakit adalah aplikasi web berbasis Laravel yang mengelola operasional rumah sakit dengan arsitektur MVC (Model-View-Controller). Sistem ini memungkinkan pengelolaan data pasien, dokter, poli, dan obat dengan efisien.
 
-## Arsitektur MVC
+## 🏗️ Arsitektur MVC
 
-### Model
+### 📦 Model
 Model bertanggung jawab untuk mengelola data dan bisnis logic. Model yang tersedia:
 
 - `User` - Mengelola data pengguna (admin, dokter, pasien)
@@ -16,7 +21,7 @@ Model bertanggung jawab untuk mengelola data dan bisnis logic. Model yang tersed
 - `DaftarPoli` - Mengelola data pendaftaran pasien ke poliklinik
 - `JadwalDokter` - Mengelola jadwal praktek dokter
 
-### View
+### 🎨 View
 View adalah tampilan yang ditampilkan kepada pengguna. Proyek ini menggunakan:
 
 - Blade Template Engine
@@ -24,7 +29,7 @@ View adalah tampilan yang ditampilkan kepada pengguna. Proyek ini menggunakan:
 - Vue.js untuk komponen interaktif
 - Tailwind CSS untuk styling
 
-### Controller
+### 🔄 Controller
 Controller mengelola logika bisnis dan menghubungkan Model dengan View. Controller yang tersedia:
 
 - `AuthController` - Mengelola autentikasi pengguna
@@ -32,20 +37,20 @@ Controller mengelola logika bisnis dan menghubungkan Model dengan View. Controll
 - `DokterController` - Mengelola operasional dokter
 - `PasienController` - Mengelola operasional pasien
 
-## Fitur Utama
+## 🚀 Fitur Utama
 
-### 1. Sistem Autentikasi
+### 🔐 Sistem Autentikasi
 - Login/Logout
 - Registrasi pengguna baru
 - Reset password
 - Role-based access control (Admin, Dokter, Pasien)
 
-### 2. Dashboard
+### 📊 Dashboard
 - Dashboard admin untuk monitoring
 - Dashboard dokter untuk jadwal praktek
 - Dashboard pasien untuk informasi pendaftaran
 
-### 3. Manajemen Data
+### 📋 Manajemen Data
 - **Admin**:
   - Manajemen poliklinik
   - Manajemen dokter
@@ -63,9 +68,9 @@ Controller mengelola logika bisnis dan menghubungkan Model dengan View. Controll
   - Riwayat pemeriksaan
   - Informasi jadwal dokter
 
-## Persyaratan Sistem
+## 🛠️ Persyaratan Sistem
 
-### Prerequisites
+### 📋 Prerequisites
 - PHP 8.1 atau lebih tinggi
 - Composer
 - Node.js dan npm
@@ -73,48 +78,48 @@ Controller mengelola logika bisnis dan menghubungkan Model dengan View. Controll
 - Apache/Nginx
 - Git
 
-### Instalasi
+### 🚀 Instalasi
 1. Clone repository:
 ```bash
-git clone [repository-url]
-cd laravel-12
+$ git clone [repository-url]
+$ cd laravel-12
 ```
 
 2. Install dependencies:
 ```bash
-composer install
-npm install
+$ composer install
+$ npm install
 ```
 
 3. Copy file .env.example:
 ```bash
-cp .env.example .env
+$ cp .env.example .env
 ```
 
 4. Generate application key:
 ```bash
-php artisan key:generate
+$ php artisan key:generate
 ```
 
 5. Setup database:
 ```bash
-php artisan migrate
-php artisan db:seed
+$ php artisan migrate
+$ php artisan db:seed
 ```
 
 6. Compile assets:
 ```bash
-npm run build
+$ npm run build
 ```
 
 7. Jalankan server:
 ```bash
-php artisan serve
+$ php artisan serve
 ```
 
-## Database
+## 🗄️ Database
 
-### Struktur Database
+### 📊 Struktur Database
 - `users` - Data pengguna
 - `polis` - Data poliklinik
 - `dokters` - Data dokter
@@ -123,59 +128,59 @@ php artisan serve
 - `daftar_poli` - Data pendaftaran poliklinik
 - `jadwal_dokter` - Data jadwal dokter
 
-### ER Diagram
+### 📊 ER Diagram
 ![ER Diagram](erd.png)
 
-## Konfigurasi
+## 🔧 Konfigurasi
 
-### Environment Variables
+### ⚙️ Environment Variables
 Edit file `.env` untuk mengatur:
 - Database connection
 - Mail configuration
 - Storage configuration
 - Cache configuration
 
-### Middleware
+### 🔐 Middleware
 - `auth` - Proteksi route yang memerlukan autentikasi
 - `role` - Proteksi route berdasarkan role pengguna
 - `throttle` - Proteksi rate limiting
 
-## Testing
+## 🧪 Testing
 
-### Unit Testing
+### 🧪 Unit Testing
 ```bash
-php artisan test
+$ php artisan test
 ```
 
-### Database Testing
+### 🗄️ Database Testing
 ```bash
-php artisan test --filter="Database"
+$ php artisan test --filter="Database"
 ```
 
-## Deployment
+## 🚀 Deployment
 
-### Production Deployment
+### 🚀 Production Deployment
 1. Optimasi aplikasi:
 ```bash
-php artisan optimize:clear
-php artisan optimize
+$ php artisan optimize:clear
+$ php artisan optimize
 ```
 
 2. Cache configuration:
 ```bash
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+$ php artisan config:cache
+$ php artisan route:cache
+$ php artisan view:cache
 ```
 
 3. Compile assets:
 ```bash
-npm run build --production
+$ npm run build --production
 ```
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
-### Common Issues
+### 🚫 Common Issues
 1. **Database Connection Error**
    - Periksa konfigurasi database di `.env`
    - Pastikan MySQL/MariaDB sudah berjalan
@@ -188,30 +193,38 @@ npm run build --production
    - Clear view cache: `php artisan view:clear`
    - Pastikan file view berada di direktori yang benar
 
-## Best Practices
+## 📚 Best Practices
 
-### Code Style
+### 📝 Code Style
 - Mengikuti PSR-12 coding standards
 - Menggunakan Laravel coding conventions
 - Menulis dokumentasi untuk setiap fungsi
 
-### Security
+### 🔐 Security
 - Menggunakan Laravel CSRF protection
 - Mengimplementasikan rate limiting
-- Menggunakan Laravel's built-in validation
 
-### Performance
-- Menggunakan Eloquent relationships
-- Mengimplementasikan caching
-- Optimizing database queries
+## 📝 Lisensi
+[MIT License](LICENSE)
 
-## Kontributor
-
+## 👥 Kontributor
 - Nama: Glen Fierre Sijabat
 - NIM: A11.2022.14369
 - Prodi: Teknik Informatika
 - Universitas: [Nama Universitas]
 
-## Lisensi
+## 📱 Kontak
+- Email: email@example.com
+- LinkedIn: [Profil LinkedIn](https://linkedin.com/in/username)
 
-Project ini dilindungi oleh lisensi MIT. Lihat file LICENSE untuk detail lebih lanjut.
+<p align="center">
+  <a href="https://laravel.com">
+    <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Logo" width="40">
+  </a>
+  <a href="https://php.net">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP Logo" width="40">
+  </a>
+  <a href="https://getbootstrap.com">
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" width="40">
+  </a>
+</p>
